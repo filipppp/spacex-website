@@ -31,8 +31,9 @@
   },
   "keywords": [
     "webpack",
-    "scss",
-    "css"
+    "ts",
+    "type script",
+    "scss"
   ],
   "author": "Grzegorz Sarzyński",
   "license": "ISC"
