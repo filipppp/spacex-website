@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Webpack starter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Cool magazine</title>
 </head>
 <body>
-<div class="slider"></div>
-<div class="container">
-  <h1>Webpack html/scss/TS starter</h1>
-</div>
+<nav>
+    <div class="main-nav-controls">
+        <img class="left" src="img/logo.svg">
+        <div class="right">
+            <a href="#falcon-heavy">Falcon Heavy</a>
+            <a href="#bfr">BFR</a>
+            <a href="#falcon9">Falcon 9</a>
+            <button id="menu-switcher"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="menu-list">
+        <div class="menu-row">Neuste Aritkel</div>
+        <div class="menu-row">Neuste Aritkel</div>
+        <div class="menu-row">Neuste Aritkel</div>
+    </div>
+</nav>
+<main>
+    <div class="page" id="falcon-heavy">
+        <div class="page-descr">
+            <p>The first rocket achieving the unachievable</p>
+        </div>
+    </div>
+    <div class="page" id="bfr">
+        <h1>Falcon Heavy</h1>
+    </div>
+    <div class="page" id="falcon9">
+        <h1>Falcon Heavy</h1>
+    </div>
+</main>
 </body>
 </html>

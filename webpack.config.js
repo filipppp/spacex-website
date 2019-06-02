@@ -23,6 +23,11 @@ module.exports = (env, options) => {
           use: 'ts-loader',
           exclude: /node_modules/
         },
+          {
+              test: /\.(woff|woff2|eot|ttf|otf)$/,
+              exclude: /node_modules/,
+              loader: 'file-loader?limit=1024&name=fonts/[name].[ext]'
+          },
         {
           test: /\.(css|sass|scss)$/,
           use: [
