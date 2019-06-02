@@ -2,6 +2,8 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require("path");
+const CopyPlugin = require('copy-webpack-plugin');
+
 
 module.exports = (env, options) => {
   const devMode = options.mode === 'development';
@@ -43,7 +45,7 @@ module.exports = (env, options) => {
         },
         {
           test: /\.html$/,
-          use: devMode ? ['html-loader'] : [{ loader: 'html-loader', options: { minimize: true } }],
+          use: devMode ? [{loader: 'html-loader', options: {attrs: ['img:src', 'source:srcset']}}] : [{ loader: 'html-loader', options: { minimize: true } }],
         },
         {
           test: /\.(png|svg|jpg|gif)$/,
@@ -63,6 +65,9 @@ module.exports = (env, options) => {
       extensions: [ '.tsx', '.ts', '.js' ]
     },
     plugins: [
+        new CopyPlugin([
+            {from: "img/vid.mp4", to: "img/vid.mp4", context: "src"}
+        ]),
       new CleanWebpackPlugin(['dist']),
       new HtmlWebPackPlugin({
         template: 'src/index.html',

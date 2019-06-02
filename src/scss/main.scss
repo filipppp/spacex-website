@@ -10,10 +10,10 @@ html {
   padding: 0;
   scroll-behavior: smooth;
   box-sizing: border-box;
-  font-family: "Nasalization";
+  font-family: "Nasalization", serif;
 }
 
-/* Navbar Style & Mobile Device */
+/* Navbar Style & Mobile Device responsiveness */
 nav {
   position: sticky;
   top: 0;
@@ -21,7 +21,7 @@ nav {
   color: white;
   background-color: $primary;
   @include shadow(normal);
-
+  z-index: 10;
 
   .show {
     display: flex !important;
@@ -49,6 +49,11 @@ nav {
       line-height: 3rem;
 
       transition: background-color 0.2s;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
     }
 
     .menu-row:hover {
@@ -127,24 +132,82 @@ nav {
 /* Main Style */
 main {
   .page {
-    height: 100vh;
+    font-family: 'Roboto', sans-serif;
 
-    .page-descr {
-      background: url("../img/bfr.jpg");
-      @include responsive-bg-image(3359, 1516);
-      color: white;
+    video {
+      width: 100%;
+      display: block;
+    }
 
-      display: flex;
-      flex-direction: column;
-      justify-content: end;
-      align-items: center;
-      p {
-        margin: 0;
+    span {
+      display: block;
+      @include mediaQuery(700px, min) {
+        margin-top: -5rem !important;
+        padding-bottom: 5rem !important;
       }
     }
-  }
 
-  h1 {
-    margin: 0;
+    .page-image {
+      width: 100%;
+      vertical-align: middle;
+    }
+    .page-descr {
+      color: white;
+      position: relative;
+      padding: 2rem;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+
+      img {
+        width: 100px;
+        @include mediaQuery(600px, max) {
+          display: none;
+        };
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+
+        p {
+          font-weight: lighter;
+          max-width: 20rem;
+          margin: 1rem;
+          text-align: center;
+        }
+        h1 {
+          margin: 1rem;
+        }
+      }
+    }
+
+    .page-descr:after {
+      content: "";
+      background: url("../img/fh/fh-landing.jpg") no-repeat center center fixed;
+      background-size: cover;
+      opacity: 1;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -2;
+    }
+    .page-descr:before {
+      content: "";
+      background: black;
+      opacity: 0.90;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+    }
   }
 }
