@@ -25,7 +25,7 @@ nav {
 
   .show {
     display: flex !important;
-    @include mediaQuery(700px, min) {
+    @include mediaQuery(900px, min) {
       display: none !important;
     }
   }
@@ -87,7 +87,7 @@ nav {
         font-size: 1.4rem;
 
         transition: background-color 0.2s;
-        @include mediaQuery(700px, min) {
+        @include mediaQuery(900px, min) {
           display: none;
         }
       }
@@ -109,7 +109,7 @@ nav {
 
         color: white;
         transition: background-color 0.2s;
-        @include mediaQuery(700px, max) {
+        @include mediaQuery(900px, max) {
           display: none;
         }
       }
@@ -201,7 +201,7 @@ main {
     .page-descr:before {
       content: "";
       background: black;
-      opacity: 0.90;
+      opacity: 0.70;
       top: 0;
       left: 0;
       bottom: 0;

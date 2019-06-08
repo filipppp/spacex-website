@@ -48,7 +48,7 @@ module.exports = (env, options) => {
           use: devMode ? [{loader: 'html-loader', options: {attrs: ['img:src', 'source:srcset']}}] : [{ loader: 'html-loader', options: { minimize: true } }],
         },
         {
-          test: /\.(png|svg|jpg|gif)$/,
+          test: /\.(png|svg|jpg|gif|ico)$/,
           use: [
             {
               loader: 'file-loader',
@@ -66,12 +66,18 @@ module.exports = (env, options) => {
     },
     plugins: [
         new CopyPlugin([
-            {from: "img/vid.mp4", to: "img/vid.mp4", context: "src"}
+            {from: "img/vid.mp4", to: "img/vid.mp4", context: "src"},
+            {from: "img/favicon.ico", to: "img/favicon.ico", context: "src"}
         ]),
       new CleanWebpackPlugin(['dist']),
       new HtmlWebPackPlugin({
         template: 'src/index.html',
         filename: 'index.html',
+          output: {
+              path: 'build',
+              publicPath: "/spacex/",
+              filename: 'bundle.js'
+          },
       }),
       new MiniCssExtractPlugin({
         filename: 'css/[name].[hash].css',
